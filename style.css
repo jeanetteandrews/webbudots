@@ -1,0 +1,211 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    /* overflow: hidden; */
+  }
+  
+#my-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-color: black;
+  }
+
+#date-display {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    color: white;
+    font-family: "Honk", sans-serif;
+    pointer-events: none;
+  }
+
+#controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+  }
+  
+  #controls button, 
+  #controls input[type="range"] {
+    cursor: pointer;
+    margin-bottom: 3px;
+    font-family: "Honk", sans-serif;
+    font-size: 50px;
+  }  
+
+  #controls input[type="range"] {
+    margin-bottom: 10px;
+  } 
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #2196f3 50%, #ccc 50%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+  }
+  
+  /* Chrome & Safari Thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #2196f3;
+    border-radius: 50%;
+    margin-top: 0px;
+  }
+  
+  /* Firefox Track */
+  input[type="range"]::-moz-range-track {
+    height: 20px;
+    background: #ccc;
+    border-radius: 10px;
+  }
+  
+  /* Firefox Progress Fill */
+  input[type="range"]::-moz-range-progress {
+    height: 20px;
+    background: #2196f3;
+    border-radius: 10px;
+  }
+  
+  /* Firefox Thumb */
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #2196f3;
+    border-radius: 50%;
+  }
+  
+
+  #about-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    /* z-index: 10;
+    background-color: rgba(255,255,255,0.1);
+    color: white; */
+    /* border: 1px solid white; */
+    padding: 12px;
+    font-size: 50px;
+    font-family: "Honk", sans-serif;
+    cursor: pointer;
+    /* backdrop-filter: blur(4px); */
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+  }
+  
+  #about-box {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    z-index: 20;
+    max-width: 500px;
+    max-height: 80vh; /* ✅ limits height so it can scroll */
+    overflow-y: auto;  /* ✅ adds vertical scroll if content overflows */
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 15px 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 1.5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    pointer-events: auto;
+  }
+  
+  #about-box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #about-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  #about-box::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+  
+  #about-box.hidden {
+    display: none;
+  }
+  
+  #close-about {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  #start-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .honk {
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 15,
+      "SHLN" 50;
+  }
+
+  .kalnia-glaze {
+    font-family: "Kalnia Glaze", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
+  .grayscale {
+    filter: grayscale(100%);
+    opacity: 0.5;
+  }
