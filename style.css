@@ -57,8 +57,9 @@ html, body {
     transform: scale(1.2);
   }
 
-  #about-button:hover .button-text {
-    transform: scale(1.1);
+  #about-button:hover .about-text {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
   }
 
   /* #controls button:hover {
@@ -121,19 +122,16 @@ html, body {
 
   #about-button {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 20px;
     /* z-index: 10;
     background-color: rgba(255,255,255,0.1);
     color: white; */
     /* border: 1px solid white; */
-    padding: 12px;
+    padding: 6px 30px 6px 30px;
     font-size: 50px;
     font-family: "Honk", sans-serif;
     cursor: pointer;
-    /* backdrop-filter: blur(4px); */
-    padding: 12px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -141,6 +139,7 @@ html, body {
   }
   
   #about-box {
+    font-family: "Inconsolata", monospace;
     position: absolute;
     top: 130px;
     left: 20px;
@@ -152,7 +151,6 @@ html, body {
     color: white;
     padding: 15px 20px;
     border: 1px solid white;
-    border-radius: 8px;
     font-size: 24px;
     line-height: 1.5;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -226,3 +224,57 @@ html, body {
     filter: grayscale(100%);
     opacity: 0.5;
   }
+
+  #about-box span{
+    font-family: "Inconsolata", monospace;
+    /* text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; */
+    color: magenta;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    z-index: 1; /* ensures it's above background */
+  }
+  
+  .dj-hover::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background-image: url('dj-love-debut-album.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+  }
+  
+  .dj-hover:hover::after {
+    opacity: 1;
+  }
+
+.davao::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background-image: url('davao.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.davao:hover::after {
+  opacity: 1;
+}
