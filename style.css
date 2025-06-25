@@ -31,7 +31,7 @@ html, body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     padding: 12px;
     border-radius: 8px;
     display: flex;
@@ -47,6 +47,23 @@ html, body {
     font-family: "Honk", sans-serif;
     font-size: 50px;
   }  
+
+  #controls button .button-text {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  
+  #controls button:hover .button-text {
+    transform: scale(1.2);
+  }
+
+  #about-button:hover .button-text {
+    transform: scale(1.1);
+  }
+
+  /* #controls button:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  } */
 
   #controls input[type="range"] {
     margin-bottom: 10px;
