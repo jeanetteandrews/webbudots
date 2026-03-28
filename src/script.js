@@ -647,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const label = document.getElementById(`label-${i}`);
     if (label) label.style.opacity = '0.3';
   }
-  
+
   const buttons = document.querySelectorAll('[onclick^="toggleTrack"]');
   buttons.forEach((button, index) => {
     const slider = button.nextElementSibling;
@@ -694,3 +694,11 @@ Object.entries(hoverImages).forEach(([id, src]) => {
     hoverPreview.style.display = 'none';
   });
 });
+
+document.body.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      console.log('Fullscreen error:', err);
+    });
+  }
+}, { once: true });
